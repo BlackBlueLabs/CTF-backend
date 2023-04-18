@@ -32,11 +32,11 @@ public class HelloServlet extends HttpServlet {
         // Execute the command
         String inp  = request.getParameter("command");
 
-        if(!(inp.equals("-h") || (inp.equals("-l") || (inp.equals("-f"))){
+        if(!(inp.equals("-h") || (inp.equals("-l") || (inp.equals("-f"))))){
             PrintWriter out = response.getWriter();
             out.println("<html><body>");
             out.println("<head>\n" +
-            "<meta http-equiv = \"refresh\" content = \"2; url = https://hacking-ctf0x1-fils.herokuapp.com/CTF-WebApp-1.0-SNAPSHOT/\" />"
+            "<meta http-equiv = \"refresh\" content = \"2; url = https://hacking-ctf0x1-fils.herokuapp.com/CTF-WebApp-1.0-SNAPSHOT/\" />" +
                         "<title>CTF Hacking the command</title>\n" +
                         "</head>");
             out.println("<h1>Invalid input</h1>");
@@ -87,7 +87,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doHead(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        massage = "xxx.com/xxx"
+        massage = "xxx.com/xxx";
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
