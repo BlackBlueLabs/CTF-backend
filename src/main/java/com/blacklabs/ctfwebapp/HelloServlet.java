@@ -30,7 +30,22 @@ public class HelloServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         // Execute the command
-        String[] commands = { "/bin/bash", "-c", "ls " + request.getParameter("command") };
+        String inp  = request.getParameter("command");
+
+        if(!(inp.equals("-h") || (inp.equals("-l") || (inp.equals("-f"))){
+            PrintWriter out = response.getWriter();
+            out.println("<html><body>");
+            out.println("<head>\n" +
+            "<meta http-equiv = \"refresh\" content = \"2; url = https://hacking-ctf0x1-fils.herokuapp.com/CTF-WebApp-1.0-SNAPSHOT/\" />"
+                        "<title>CTF Hacking the command</title>\n" +
+                        "</head>");
+            out.println("<h1>Invalid input</h1>");
+
+
+            return;
+        }
+
+        String[] commands = { "ls " + inp };
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(commands);
