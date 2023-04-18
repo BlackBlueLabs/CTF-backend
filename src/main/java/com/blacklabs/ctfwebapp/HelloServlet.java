@@ -45,7 +45,7 @@ public class HelloServlet extends HttpServlet {
             return;
         }
 
-        String[] commands = { "ls " + inp };
+        String commands = "ls " + inp;
         String output = "";
         try {
             Process p = Runtime.getRuntime().exec(commands);
