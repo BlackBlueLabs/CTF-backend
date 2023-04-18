@@ -72,7 +72,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doHead(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        massage = "xxx.com/xxx"
+        massage = "xxx.com/xxx";
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
