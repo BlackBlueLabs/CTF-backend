@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 # Copy the target war file to the webapps directory
 COPY target/ /usr/local/tomcat/webapps/
+COPY DontLookAtMe /usr/local/tomcat/.DontLookAtMe
 COPY catalina-dynamic.sh /usr/local/tomcat/bin/
 RUN chmod +x /usr/local/tomcat/bin/catalina-dynamic.sh
 # Expose the port 8080
